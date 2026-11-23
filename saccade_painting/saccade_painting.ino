@@ -16,6 +16,8 @@
 
 #define X PERRY_WIDTH
 #define Y PERRY_HEIGHT
+#define IMG perry
+
 CRGB leds[X];
 
 void setup() {
@@ -26,7 +28,7 @@ void setup() {
 
 void loop(){
         for(int i = 0; i < Y; i++){ //column
-            memcpy_P((void*)leds, (const void*)&perry[i * X], X * sizeof(CRGB)); 
+            memcpy_P((void*)leds, (const void*)&IMG[i * X], X * sizeof(CRGB)); 
             FastLED.show();
             //FastLED.delay(DELAY);
         }
